@@ -19,7 +19,7 @@ public class RpcClientConfig {
     // 序列化和反序列化的配置信息
     private Class<? extends Encoder> encoderClass = JSONEncoder.class;
     private Class<? extends Decoder> decoderClass = JSONDecoder.class;
-    // 路由选择策略信息（默认随即策略）
+    // 路由选择策略信息（默认随机策略）
     private Class<? extends TransportSelector> selectorClass = RandomTransportSelector.class;
     // 每一个server的peer需要建立多少连接
     private int connectCount = 1;

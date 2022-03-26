@@ -29,6 +29,9 @@ public class RpcClient {
 
     // 获取接口的代理对象
     public <T> T getProxy(Class<T> clazz) {
-        return (T) Proxy.newProxyInstance(getClass().getClassLoader(), new Class[]{clazz}, new RemoteInvoker(clazz, encoder, decoder, selector));
+        return (T) Proxy.newProxyInstance(
+                getClass().getClassLoader(),
+                new Class[]{clazz},
+                new RemoteInvoker(clazz, encoder, decoder, selector));
     }
 }
