@@ -18,6 +18,7 @@ public interface TransportSelector {
     TransportClient select();
     // 释放用完的client
     void release(TransportClient client);
+
     // 关闭selector
-    // void close();
+    void close();
 }
