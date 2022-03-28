@@ -23,10 +23,10 @@ public class ReflectionUtils {
     }
 
     /**
-     * 获取某个class的共有方法
+     * 获取某个class的公有方法
      *
      * @param clazz 当前class
-     * @return 当前类生命的共有方法
+     * @return 当前类声明的public修饰的方法数组
      */
     public static Method[] getPublicMethods(Class clazz) {
         // 当前类所有的方法
