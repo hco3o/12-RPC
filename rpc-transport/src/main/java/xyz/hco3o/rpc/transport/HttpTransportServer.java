@@ -55,7 +55,7 @@ public class HttpTransportServer implements TransportServer {
     class RequestServlet extends HttpServlet {
         // 需要处理post请求，重写一下
         @Override
-        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
             log.info("client connected!");
             ServletInputStream in = req.getInputStream();
             OutputStream out = resp.getOutputStream();

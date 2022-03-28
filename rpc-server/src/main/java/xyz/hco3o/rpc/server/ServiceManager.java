@@ -15,7 +15,7 @@ public class ServiceManager {
 
     // 注册的服务放到map里
     // k：服务的描述；v：服务的具体实现）
-    private Map<ServiceDescriptor, ServiceInstance> services;
+    private final Map<ServiceDescriptor, ServiceInstance> services;
 
     public ServiceManager() {
         this.services = new ConcurrentHashMap<>();

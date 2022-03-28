@@ -20,9 +20,9 @@ import java.lang.reflect.Method;
 public class RemoteInvoker implements InvocationHandler {
 
     private Class clazz;
-    private Encoder encoder;
-    private Decoder decoder;
-    private TransportSelector selector;
+    private final Encoder encoder;
+    private final Decoder decoder;
+    private final TransportSelector selector;
 
     public RemoteInvoker(Class clazz, Encoder encoder, Decoder decoder, TransportSelector selector) {
         this.clazz = clazz;
@@ -39,7 +39,7 @@ public class RemoteInvoker implements InvocationHandler {
             4、从响应里拿到返回的数据
      */
     @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    public Object invoke(Object proxy, Method method, Object[] args) {
         Request request = new Request();
         request.setService(ServiceDescriptor.from(clazz, method));
         request.setParameters(args);
@@ -54,7 +54,7 @@ public class RemoteInvoker implements InvocationHandler {
 
     // 实现网络传输
     private Response invokeRemote(Request request) {
-        Response response = null;
+        Response response;
         TransportClient client = null;
         try {
             // 选一个client

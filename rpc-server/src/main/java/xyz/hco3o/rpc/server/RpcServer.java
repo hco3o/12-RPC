@@ -17,11 +17,11 @@ import java.io.OutputStream;
 @Slf4j
 public class RpcServer {
     private RpcServerConfig config;
-    private TransportServer net;
-    private Encoder encoder;
-    private Decoder decoder;
-    private ServiceManager serviceManager;
-    private ServiceInvoker serviceInvoker;
+    private final TransportServer net;
+    private final Encoder encoder;
+    private final Decoder decoder;
+    private final ServiceManager serviceManager;
+    private final ServiceInvoker serviceInvoker;
 
     public RpcServer() {
         this(new RpcServerConfig());

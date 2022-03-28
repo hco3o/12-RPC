@@ -9,7 +9,7 @@ import xyz.hco3o.rpc.codec.JSONEncoder;
 import xyz.hco3o.rpc.transport.HttpTransportClient;
 import xyz.hco3o.rpc.transport.TransportClient;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -24,5 +24,5 @@ public class RpcClientConfig {
     // 每一个server的peer需要建立多少连接
     private int connectCount = 1;
     // 可以连哪些网络端点
-    private List<Peer> servers = Arrays.asList(new Peer("127.0.0.1", 3000));
+    private List<Peer> servers = Collections.singletonList(new Peer("127.0.0.1", 3000));
 }

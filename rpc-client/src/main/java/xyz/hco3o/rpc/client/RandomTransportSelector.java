@@ -16,7 +16,7 @@ public class RandomTransportSelector implements TransportSelector {
 
 
     // 已经连接好的clients
-    private List<TransportClient> clients;
+    private final List<TransportClient> clients;
 
     public RandomTransportSelector() {
         clients = new ArrayList<>();
