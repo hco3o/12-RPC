@@ -16,7 +16,6 @@ import java.io.OutputStream;
 
 @Slf4j
 public class RpcServer {
-    private RpcServerConfig config;
     private final TransportServer net;
     private final Encoder encoder;
     private final Decoder decoder;
@@ -28,7 +27,6 @@ public class RpcServer {
     }
 
     public RpcServer(RpcServerConfig config) {
-        this.config = config;
         // 创建网络模块
         this.net = ReflectionUtils.newInstance(config.getTransportClass());
         this.net.init(config.getPort(), this.handler);
